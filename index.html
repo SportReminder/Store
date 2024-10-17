@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTREMINDER STORE - Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <style>
+        /* Стили для товаров */
+        .product a {
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .product p {
+            font-weight: bold; /* Жирный текст */
+            color: black; /* Черный цвет */
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-search-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="SportReminder Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+        </div>
+
+        <nav class="categories-menu">
+            <ul>
+                <li><a href="#">OUTERWEAR</a></li>
+                <li><a href="#">SWEATERS</a></li>
+                <li><a href="#">HOODIES</a></li>
+                <li><a href="#">T-SHIRTS</a></li>
+                <li><a href="#">SHIRTS</a></li>
+                <li><a href="#">PANTS</a></li>
+                <li><a href="#">SHORTS</a></li>
+                <li><a href="#">BAGS</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <div id="cart-icon" class="cart-hidden">
+        <a href="cart.html" class="cart-link">
+            <img src="cart.png" alt="Cart" class="cart-image">
+            <span id="cart-count" class="cart-count">0</span>
+        </a>
+    </div>
+    <main>
+        <div class="product-grid">
+            <div class="product">
+                <a href="product1.html">
+                    <img src="tshirtsport1.jpg" alt="Product 1">
+                    <p>SportReminder Embossed T-shirt in Black</p>
+                    <p>$29.99</p>
+                </a>
+            </div>
+            <div class="product">
+                <a href="product2.html">
+                    <img src="tshirtsport2.jpg" alt="Product 2">
+                    <p>SportReminder Mature T-shirt in Black</p>
+                    <p>$29.99</p>
+                </a>
+            </div>
+            <div class="product">
+                <a href="product3.html">
+                    <img src="tshirtsport3.jpg" alt="Product 3">
+                    <p>SportReminder T-shirt in Black</p>
+                    <p>$29.99</p>
+                </a>
+            </div>
+            <!-- Add more products as necessary -->
+        </div>
+    </main>
+
+    <script src="cart.js"></script>
+</body>
+</html>

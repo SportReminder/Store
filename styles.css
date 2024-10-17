@@ -1,0 +1,392 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стилизуем header */
+header {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header h1 a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Центрируем контент на странице товара */
+.main-container {
+    max-width: 1200px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование страницы */
+    padding: 20px;
+}
+
+/* Сетка товаров */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Сетка с 3-4 столбцами */
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+}
+
+/* Стиль каждого товара */
+.product {
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product p {
+    margin: 10px 0;
+}
+
+/* Hover эффект для товара */
+.product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Центрируем карточку товара */
+.product-page {
+    text-align: center;
+}
+
+.product-page img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-details {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.product-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Стили для кнопки */
+.button {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #555; /* Эффект при наведении */
+}
+
+/* Корзина в правом верхнем углу */
+#cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#cart-icon a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cart-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Изображение растягивается без искажений */
+}
+
+/* Стиль для счетчика товаров */
+.cart-count {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #00a4ff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    transform: translate(50%, -50%);
+}
+
+/* Очищаем корзину */
+.cart-hidden {
+    display: none;
+}
+
+/* Логотип и поиск */
+.logo-search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo img {
+    display: block;
+    margin: 30px auto;
+    max-width: 350px; /* Размер логотипа 350px */
+}
+
+/* Поисковая строка */
+.search-bar {
+    position: absolute;
+    right: 20px; /* Смещение поиска вправо */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 200px;
+}
+
+/* Меню категорий */
+.categories-menu {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.categories-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Расстояние между элементами */
+}
+
+.categories-menu ul li {
+    display: inline;
+}
+
+.categories-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.categories-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Разделительная линия */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0 20px;
+}
+
+
+/* Корзина */
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.cart-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.cart-item-name {
+    flex: 1;
+    text-align: left;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-price,
+.cart-item-quantity {
+    width: 100px;
+    text-align: center;
+}
+
+.remove-item {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.quantity-select {
+    padding: 5px;
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+.cart-item-remove:hover {
+    color: #000;
+}
+
+/* Общая сумма */
+.cart-total {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cart-actions button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-actions button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Стиль для промо-кода */
+.promo-code {
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.checkout-button {
+    background-color: #333;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-button:hover {
+    background-color: #555;
+}
+
+/* Ссылки под корзиной */
+.footer-links {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Селектор валют */
+.currency-selector {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.currency-selector select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+

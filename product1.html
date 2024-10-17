@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTREMINDER STORE - Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png"/>
+</head>
+<body>
+<header>
+    <div class="logo-search-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="SPORTREMINDER Logo" class="logo-img">
+            </a>       
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search" class="search-input">
+        </div>
+    </div>
+    
+    <nav class="categories-menu">
+        <ul>
+            <li><a href="#">OUTERWEAR</a></li>
+            <li><a href="#">SWEATERS</a></li>
+            <li><a href="#">HOODIES</a></li>
+            <li><a href="#">T-SHIRTS</a></li>
+            <li><a href="#">SHIRTS</a></li>
+            <li><a href="#">PANTS</a></li>
+            <li><a href="#">SHORTS</a></li>
+            <li><a href="#">BAGS</a></li>
+            <li><a href="#">ACCESSORIES</a></li>
+        </ul>
+    </nav>
+</header>
+<hr>
+
+<div class="main-container">
+    <div class="product-page">
+        <img src="tshirtsport1_1.jpg" alt="Product 1" id="product-image">
+        <div class="product-details">
+            <h2>SportReminder Embossed T-shirt in Black</h2>
+            <p class="product-price">$29.99</p>
+
+            <label for="size">Choose size:</label>
+            <select id="size" class="select-size">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+
+            <button class="button" id="add-to-cart" 
+                data-name="SportReminder Embossed T-shirt in Black" 
+                data-price="29.99" 
+                data-image="tshirtsport1_1.jpg">
+                Add to Cart
+            </button>
+        </div>
+
+        <!-- Translated details below the product -->
+        <div class="product-info">
+            <h3>Product Details:</h3>
+            <p><strong>Fabric:</strong> Knitted smooth fabric, 200g</p>
+            <p><strong>Composition:</strong> 100% cotton</p>
+            <p><strong>Printing:</strong> Embossed stamping</p>
+            <p><strong>Sizes available:</strong> S / M / L / XL </p>
+
+            <h3>Washing Instructions:</h3>
+            <p>Wash at 30°C</p>
+
+            <h3>Size Guide:</h3>
+            <p>S – Height: 165-170 cm</p>
+            <p>M – Height: 170-180 cm</p>
+            <p>L – Height: 180-185 cm</p>
+            <p>XL – Height: 185+ cm</p>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Icon -->
+<div id="cart-icon" class="cart-hidden">
+    <a href="cart.html" class="cart-link">
+        <img src="cart.png" alt="Cart" class="cart-image">
+        <span id="cart-count" class="cart-count">0</span>
+    </a>
+</div>
+
+<script>
+    document.getElementById('add-to-cart').addEventListener('click', function() {
+        const product = {
+            name: this.getAttribute('data-name'),
+            price: parseFloat(this.getAttribute('data-price')),
+            image: this.getAttribute('data-image'),
+            size: document.getElementById('size').value,
+            quantity: 1
+        };
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert('Product added to cart!');
+        const cartCount = document.getElementById('cart-count');
+        cartCount.textContent = cart.length;
+    });
+</script>
+
+</body>
+</html>

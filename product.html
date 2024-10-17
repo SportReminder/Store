@@ -1,0 +1,41 @@
+<header>
+    <h1><a href="catalog.html" class="logo-link">YUMMS STORE</a></h1>
+</header>
+
+<main>
+    <div class="product-page">
+        <img src="tshirtsport1.jpg" alt="Product 1">
+        <h2>Товар 1</h2>
+        <p>Описание товара 1</p>
+        <p>Цена: $225</p>
+
+        <button id="add-to-cart" data-name="Товар 1" data-price="225">Добавить в корзину</button>
+    </div>
+</main>
+
+<!-- Корзина -->
+<div id="cart-icon" class="cart-visible">
+    <a href="cart.html" class="cart-link">
+        <img src="cart.png" alt="Cart" class="cart-image">
+        <span id="cart-count" class="cart-count">0</span>
+    </a>
+</div>
+
+<script>
+    document.getElementById('add-to-cart').addEventListener('click', function() {
+        const product = {
+            name: this.getAttribute('data-name'),
+            price: parseFloat(this.getAttribute('data-price')),
+            quantity: 1
+        };
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert('Товар добавлен в корзину!');
+        // Обновляем отображение корзины
+        const cartCount = document.getElementById('cart-count');
+        cartCount.textContent = cart.length;
+    });
+</script>
